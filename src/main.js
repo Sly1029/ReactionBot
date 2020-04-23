@@ -1,7 +1,7 @@
 'use strict';
 const MessageChecker = require("./record.js")
 const Discord = require("discord.js");
-require('dotenv').config();
+require('dotenv').config({ path: '/home/pi/Code/ReactionBot/.env'});
 
 
 
@@ -15,6 +15,7 @@ client.once('ready', () => {
 
 
 });
+
 
 client.login(process.env.API_KEY);
 const messagechecker = new MessageChecker(Discord, client);

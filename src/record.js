@@ -21,13 +21,16 @@ class MessageChecker{
 
 	checkValidImageLink(message){
 		let isLink = message.content.includes(".png") || message.content.includes(".jpg") || message.content.includes(".mp4");
-		let isMessageAttachement = message.attachments > 0;
+		let isMessageAttachement = message.attachments.size > 0;
+		console.log(message.attachments.size);	
+
 		console.log(`isLink ${isLink}  attachment ${isMessageAttachement}`);
 
-		if (isLink && isMessageAttachement){
-			message.channel.send("Is this user posting cringe??");
-
+		if (isLink || isMessageAttachement){
+			message.react('\uD83D\uDC4D');
 		}
+
+		
 
 	}
 }
